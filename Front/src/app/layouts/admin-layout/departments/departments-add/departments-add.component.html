@@ -1,0 +1,78 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 order-md-first order-lg-first  order-last ">
+
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Create Department</h4>
+                        <p class="card-category">Fill department information</p>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="facturesService.formModel" (ngSubmit)="onSubmit()">
+
+                            <div class="row">
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="nomFacture" formControlName="nomFacture">
+                                                <mat-error *ngIf="facturesService.formModel.get('nomFacture').hasError('required') && facturesService.formModel.get('nomFacture').touched">This field should not be empty.</mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="tvaFacture" formControlName="tvaFacture">
+                                                <!-- <mat-error *ngIf="facturesService.formModel.get('tvaFacture').hasError('required') && facturesService.formModel.get('tvaFacture').touched">This field should not be empty.</mat-error> -->
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="dateCreation" [value]="facturesService.formModel.get('dateCreation').value | date : 'dd/MM/yyyy'" disabled>
+                                                <mat-error *ngIf="facturesService.formModel.get('dateCreation').hasError('required') && facturesService.formModel.get('dateCreation').touched">This field should not be empty.</mat-error>
+                                            </mat-form-field>
+                                        </div>
+                            </div>
+                          
+        
+                        </form>
+                        <button mat-raised-button type="submit" (click)="onSubmit()" [disabled]="facturesService.formModel.invalid" class="btn btn-outline-danger pull-right">Create</button>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-4 ">
+                <div class="card card-profile">
+                    <div class="card-avatar" style="width: 150px;height: 150px;background-color: white;">
+                        <!-- <img class="img" src="./assets/img/faces/marc.jpg" /> -->
+                        <!-- <div style="padding-top: 50px;font-size: 60px;">
+                            <p *ngIf="!facturesService.formModel.value.title;else titleBlocChar"><strong>D</strong>
+                            </p>
+                            <ng-template #titleBlocChar>
+                                <p><strong>{{facturesService.formModel.value.title[0]}}</strong></p>
+                            </ng-template>
+                        </div>
+                    </div> --> -->
+                    <!-- <div class="card-body">
+                        <h6 class="card-category text-gray">Department</h6>
+                        <h4 class="card-title" style="display: -webkit-inline-box;">
+                            <i *ngIf="facturesService.formModel.value.status;else elseStatusBloc" style="margin-right: 10px;" class='fa fa-circle font-success f-12'></i>
+                            <ng-template #elseStatusBloc>
+                                <i class='fa fa-circle font-danger f-12' style="margin-right: 10px;"></i>
+                            </ng-template>
+                            <p *ngIf="!facturesService.formModel.value.title;else titleBloc">Department Name</p>
+                            <ng-template #titleBloc>
+                                <p>{{facturesService.formModel.value.title}}</p>
+                            </ng-template>
+                        </h4>
+                        <p class="card-description" *ngIf="!facturesService.formModel.value.description;else descriptionBloc">
+                            Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                        </p>
+                        <ng-template #descriptionBloc>
+                            <p class="card-description">{{facturesService.formModel.value.description}}</p>
+                        </ng-template>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+<!-- </div> -->

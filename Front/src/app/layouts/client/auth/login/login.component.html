@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-center align-items-center">
+    <div class="col-md-4 col-12" style="padding-top: 200px;">
+        <div class="card">
+            <div class="card-header card-header-danger" style="text-align:center">
+                <h4 class="card-title" href="/admin/dashboard" text-align="center">Account Login</h4>
+            </div>
+            <div class="card-body">
+                <div class="container">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Username">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Password">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <label for="lab1"> You don't have an account yet ?</label>
+                        <!-- <span class="psw"> <a href="#"> Forgot Password?</a></span> -->
+                        <span class="psw"><a routerLink="/register"> Register </a></span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-footer justify-content-center">
+                <button mat-raised-button type="submit" class="btn btn-danger col-md-3" routerLink="/dashboard">Login</button>
+            </div>
+        </div>
+    </div>
+</div>

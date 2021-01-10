@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<link rel="stylesheet" type="text/css"
+href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head>
+<meta charset="utf-8">
+<title>Ajout des Factures</title>
+</head>
+<body>
+<div layout:fragment="Mycontent">
+<div class="container mt-5">
+<div class="card">
+<div class="card-header">
+Modifier des Factures
+</div>
+<div class="card-body">
+<form th:action="@{saveFacture}" method="post">
+<div class="form-group">
+<label class="control-label" hidden>ID Facture :</label>
+<input type="hidden" name="idFacture" class="form-control"
+th:value="${facture.idFacture}" />
+</div>
+<div class="form-group">
+<label class="control-label">Nom Facture :</label>
+<input type="text" name="nomFacture" class="form-control"
+
+th:value="${facture.nomFacture}" />
+
+<span th:errors= ${facture.nomFacture} class="text-danger">
+
+</span>
+
+</div>
+<div class="form-group">
+<label class="control-label">Tva Facture :</label>
+<input type="text" name="tvaFacture" class="form-control"
+th:value="${facture.tvaFacture}" />
+<span th:errors=${facture.tvaFacture} class="text-danger">
+</span>
+</div>
+<div class="form-group">
+<label class="control-label">date création :</label>
+<input type="date" name="dateCreation" class="form-control"
+
+th:value="${facture.dateCreation}"/>
+
+<span th:errors=${facture.dateCreation} class="text-danger">
+
+</span>
+</div>
+<div>
+<button type="submit" class="btn btn-primary">Valider</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
